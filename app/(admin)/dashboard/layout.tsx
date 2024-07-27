@@ -55,8 +55,10 @@ export default function DashboardLayout({
 
   const getMobileActiveRouteClass = (route: string) => {
     return cn(
-      "flex items-center gap-3 rounded-lg transition-all hover:text-primary px-3 py-2",
-      isActiveRoute(route) ? "bg-muted text-primary" : "text-muted-foreground"
+      "mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground",
+      isActiveRoute(route)
+        ? "bg-muted text-foreground "
+        : "text-muted-foreground"
     );
   };
 
@@ -156,11 +158,10 @@ export default function DashboardLayout({
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
                   <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Acme Inc</span>
+                  <span>Acme Inc</span>
                 </Link>
                 <Link
                   href="/dashboard"
-                  // className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                   className={getMobileActiveRouteClass("/dashboard")}
                 >
                   <Home className="h-5 w-5" />
@@ -168,7 +169,7 @@ export default function DashboardLayout({
                 </Link>
                 <Link
                   href="/dashboard/orders"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+                  className={getMobileActiveRouteClass("/dashboard/orders")}
                 >
                   <ShoppingCart className="h-5 w-5" />
                   Orders
@@ -178,7 +179,7 @@ export default function DashboardLayout({
                 </Link>
                 <Link
                   href="/dashboard/products"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                  className={getMobileActiveRouteClass("/dashboard/products")}
                 >
                   <Package className="h-5 w-5" />
                   Products
